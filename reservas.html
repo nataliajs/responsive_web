@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>el plato reberde</title>
+
+    <!--script para elementos comunes-->
+    <script src='jquery-1.10.2.js'></script>
+    <script type='text/javascript' src='bootstrap.min.js'></script>
+    <script src="growl/javascripts/jquery.growl.js"></script>
+    <script>
+        $(function(){
+            $('#headercontainer').load('header.html');
+        });
+        
+        $(function(){
+            $('#footercontainer').load('footer.html');
+        });
+    </script>
+    
+    <script>
+        $(document).ready(function(){
+            $('#submit').click(function(e){
+                e.preventDefault();
+                var mensaje = 'Tu reserva ha sido realizada.';
+                $.growl.warning({
+                                message: mensaje,
+                                title: '¡Te esperamos!'                                
+                              });
+            });
+        });
+    </script>
+    
+    <!-- Bootstrap Core CSS -->
+    <link href="bootstrap-3.3.4/less/bootstrap.css" rel="stylesheet">
+    <link rel="stylesheet" href="growl/stylesheets/jquery.growl.css" />
+
+
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body>
+    
+    <div id='headercontainer'></div>
+    <div class="container">
+        <ol class="breadcrumb">
+          <li><a href="index.html">Home</a></li>          
+          <li class="active">Reservas</li>
+        </ol>
+    </div>
+    <div class="container-fluid">
+        <div class="row margen">            
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    <hr>
+                    <h2 class="text-center">reserva tu mesa</h2>
+                    <hr>             
+                    <hr class="visible-xs">
+                </div>    
+            
+            
+            <div class='row'>
+                <div class='col-lg-4 col-lg-offset-4 col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2 col-xs-10 col-xs-offset-1'>
+                    <form role="form">
+                        <div class="form-group">
+                            <label for="nombre">Nombre</label>
+                            <input type="text" class="form-control" id="nombre">
+                          </div>
+                        <div class="form-group">
+                            <label for="apellidos">Apellidos</label>
+                            <input type="text" class="form-control" id="apellidos">
+                          </div>
+                          <div class="form-group">
+                            <label for="email">e-mail</label>
+                            <input type="email" class="form-control" id="email">
+                          </div>
+                          <div class="form-group">
+                            <label for="tlfo">Teléfono</label>
+                            <input type="text" class="form-control" id="tlfo">
+                          </div>
+                        <div class="form-group">
+                            <label for="fecha">Fecha</label>
+                            <input type="text" class="form-control" id="fecha" placeholder='dd/mm/yyyy'>
+                          </div>
+                        
+                        
+                        
+                        <div class="form-group">
+                            <div class="radio">
+                              <label><input type="radio" name="optradio">Comida</label>
+                            </div>
+                            <div class="radio">
+                              <label><input type="radio" name="optradio">Cena</label>
+                            </div>
+                        </div>
+                           <div class="form-group">
+                              <label for="comment">Comentarios</label>
+                              <textarea class="form-control" rows="5" id="comment"></textarea>
+                            </div>
+                          <button type="submit" class="btn btn-default" id='submit'>Submit</button>
+                    </form>
+                
+                </div>
+            </div><!--row-->
+            
+        </div> 
+    </div>
+    
+
+
+       
+
+    <div id='footercontainer'></div>
+
+
+
+</body>
+
+</html>
